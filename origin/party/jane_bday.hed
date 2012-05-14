@@ -1,0 +1,16 @@
+<html><head><title>Jane's Birthday - FiftyEight.Net</title></head>
+<body>
+<table width=100%>
+ <tr>
+  <td align=center>
+   <!--#echo banner=""-->
+  </td>
+ </tr>
+ <tr>
+  <td align=center valign=middle>
+   <img src="http://%ill%/fiftyeight/jane_bday/mvc-256f.gif" height=100 align=left>
+   <img src="http://%ill%/fiftyeight/jane_bday/mvc-256f.gif" height=100 align=right>
+   <h1>Jane's Birthday</h1>
+  </td>
+ </tr>
+</table>
