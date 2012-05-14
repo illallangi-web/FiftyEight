@@ -1,0 +1,5 @@
+
+<table width=100% cellspacing=0 cellpadding=5><tr height=4 bgcolor=white><td></td><td></td><td></td></tr><tr><td width=10%><b>Andrew Cole</b><br>andrew@illallangi.com<br><a href="http://www.illallangi.com">http://www.illallangi.com</a></td>
+<td width=1 bgcolor=white></td><td><pre>Welcome to my guestboook! Please sign it.</pre></td></tr><tr height=4 bgcolor=white><td></td><td></td><td></td></tr></table>
+<table width=100% cellspacing=0 cellpadding=5><tr height=4 bgcolor=white><td></td><td></td><td></td></tr><tr><td width=10%><b>Bob</b><br>BobIt@Blah.Com<br><a href="http://blah.com">http://blah.com</a></td>
+<td width=1 bgcolor=white></td><td><pre>Fsck You All!</pre></td></tr><tr height=4 bgcolor=white><td></td><td></td><td></td></tr></table>
