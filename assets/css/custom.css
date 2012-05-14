@@ -1,3 +1,9 @@
+/* http://stackoverflow.com/questions/1202425/html-css-making-the-main-scrollbar-always-visible */
+html { 
+  overflow: -moz-scrollbars-vertical;  
+  overflow-y: scroll; 
+} 
+
 body {
   padding-top: 60px;
   padding-bottom: 40px;
