@@ -1,0 +1,13 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.hero-unit {
+  background-image: url('../img/fiftyeight.png'); 
+  background-color: #000000;
+  background-size: 512px 512px; 
+  background-position: center;
+  background-repeat:no-repeat;
+  height: 192px;
+}
