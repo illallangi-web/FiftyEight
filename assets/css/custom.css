@@ -22,3 +22,29 @@ li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8
 {
   list-style-type: decimal;
 }
+
+/* https://gist.github.com/1243028 */
+.gist-highlight {
+  border-left: 3ex solid #eee;
+  position: relative;
+}
+
+.gist-highlight pre {
+  counter-reset: linenumbers;
+}
+
+.gist-highlight pre div:before {
+  color: #aaa;
+  content: counter(linenumbers);
+  counter-increment: linenumbers;
+  left: -3ex;
+  position: absolute;
+  text-align: right;
+  width: 2.5ex;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
