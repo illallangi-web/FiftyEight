@@ -8,10 +8,10 @@
     <meta name="author" content="Illallangi Enterprises">
 
     <!-- Le styles -->
-    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/assets/google-code-prettify/css/prettify.css" rel="stylesheet">
-    <link href="/assets/css/custom.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../assets/google-code-prettify/css/prettify.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -19,11 +19,11 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
 
   <body onload="prettyPrint()">
@@ -62,75 +62,7 @@
               </div>
               <div id="party_cgi" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <pre class="prettyprint linenums">
-#!/usr/bin/perl 
-
-#Initialise - print content type, header and get values passed.
-@pairs = split(/&amp;/, $ENV{&#39;QUERY_STRING&#39;});
-foreach $pair (@pairs) {
-        ($name, $value) = split(/=/, $pair);
-        $value =~ tr/+/ /;
-        $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack(&quot;C&quot;, hex($1))/eg;
-        $FORM{$name} = $value;
-}
-
-
-print &quot;Content-type: text/html\n\n&quot;;
-
-open(DATA,&quot;$FORM{&#39;col&#39;}.hed&quot;);
-        @index = &lt;DATA&gt;;
-close (DATA);
-
-foreach $line (@index)
-{
-	print $line;
-}
-
-print &quot;&lt;table width=100% border=0 cellpadding=0 cellspacing=0&gt;\n\n&quot;;
-
-@index = `ls ./$FORM{&#39;col&#39;}/ | grep jpg\$`;
-chomp(@index);
-
-$align = &quot;1&quot;;
-$olign = &quot;0&quot;;
-
-print &quot;&lt;tr height=5&gt;&lt;td colspan=3 bgcolor=black&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
-
-foreach $line (@index)
-{
-	($image, $file) = split(/&amp;/, $line);
-
-$image =~ s/%actv%/$actv/g;
-$image =~ s/%ill%/$ill/g;
-
-	$tlign = $align;
-	$align = $olign;
-	$olign = $tlign;
-
-
-	print &quot;&lt;tr&gt;&lt;td&gt;\n&quot;;
-	if ($align eq &quot;1&quot;) {
-		print &quot;&lt;a href=$image.jpg&gt;&quot;;
-		print &quot;&lt;img src=$FORM{&#39;col&#39;}/$image align=$align border=0 height=100&gt;&quot;;
-		print &quot;&lt;/a&gt;&quot;;
-	}
-
-	print &quot;&lt;/td&gt;&lt;td align=center
-width=100%&gt;&lt;h2&gt;$text&lt;/h2&gt;&lt;/td&gt;&lt;td&gt;&quot;;
-
-	if ($align eq &quot;0&quot;) {
-		print &quot;&lt;a href=$image.jpg&gt;&quot;;
-		print &quot;&lt;img src=$FORM{&#39;col&#39;}/$image align=$align border=0 height=100&gt;&quot;;
-		print &quot;&lt;/a&gt;&quot;;
-	}
-	print &quot;&lt;/td&gt;&lt;/tr&gt;\n&quot;;
-print &quot;&lt;tr height=5&gt;&lt;td colspan=3 bgcolor=black&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
-
-}
-
-print &quot;\n&lt;/table&gt;\n&quot;;
-print &quot;&lt;/body&gt;\n&quot;;
-print &quot;&lt;/html&gt;\n&quot;;</pre>
+                  <a href="https://gist.github.com/2718980#file_party.cgi">View Source</a>
                 </div>
               </div>
             </div>
@@ -140,23 +72,7 @@ print &quot;&lt;/html&gt;\n&quot;;</pre>
               </div>
               <div id="jane_bday_hed" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <pre class="prettyprint linenums">
-&lt;html&gt;&lt;head&gt;&lt;title&gt;Jane&#39;s Birthday - FiftyEight.Net&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;
-&lt;table width=100%&gt;
- &lt;tr&gt;
-  &lt;td align=center&gt;
-   &lt;!--#echo banner=&quot;&quot;--&gt;
-  &lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td align=center valign=middle&gt;
-   &lt;img src=&quot;http://%ill%/fiftyeight/jane_bday/mvc-256f.gif&quot; height=100 align=left&gt;
-   &lt;img src=&quot;http://%ill%/fiftyeight/jane_bday/mvc-256f.gif&quot; height=100 align=right&gt;
-   &lt;h1&gt;Jane&#39;s Birthday&lt;/h1&gt;
-  &lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;</pre>
+                  <a href="https://gist.github.com/2718980#file_jane_bday.hed">View Source</a>
                 </div>
               </div>
             </div>
@@ -166,9 +82,7 @@ print &quot;&lt;/html&gt;\n&quot;;</pre>
               </div>
               <div id="jane_bday_txt" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <pre class="prettyprint linenums">
-                    <script src="https://gist.github.com/2718980.js?file=jane_bday.txt"></script>
-                  </pre>
+                  <a href="https://gist.github.com/2718980#file_jane_bday.txt">View Source</a>
                 </div>
               </div>
             </div>
@@ -178,23 +92,7 @@ print &quot;&lt;/html&gt;\n&quot;;</pre>
               </div>
               <div id="aec_bday_hed" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <pre class="prettyprint linenums">
-&lt;html&gt;&lt;head&gt;&lt;title&gt;Andrew&#39;s Birthday - FiftyEight.Net&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;
-&lt;table width=100%&gt;
- &lt;tr&gt;
-  &lt;td align=center&gt;
-   &lt;!--#echo banner=&quot;&quot;--&gt;
-  &lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td align=center valign=middle&gt;
-   &lt;img src=&quot;http://%ill%/fiftyeight/aec_bday/roll2_09.gif&quot; height=100 align=left&gt;
-   &lt;img src=&quot;http://%ill%/fiftyeight/aec_bday/roll2_09.gif&quot; height=100 align=right&gt;
-   &lt;h1&gt;Andrew&#39;s Birthday&lt;/h1&gt;
-  &lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;</pre>
+                  <a href="https://gist.github.com/2718980#file_aec_bday.hed">View Source</a>
                 </div>
               </div>
             </div>
@@ -204,128 +102,7 @@ print &quot;&lt;/html&gt;\n&quot;;</pre>
               </div>
               <div id="aec_bday_txt" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <pre class="prettyprint linenums">
-http://%ill%/fiftyeight/aec_bday/group01&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group02&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group03&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group04&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group05&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group06&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group07&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group08&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group09&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group10&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group11&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group12&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group13&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/group14&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_01&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_02&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_03&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_04&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_05&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_06&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_07&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_08&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_09&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_10&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_11&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_12&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_13&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_14&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_15&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_16&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_17&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_18&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_19&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_20&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_21&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_22&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_23&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_24&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_25&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_26&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_27&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_28&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_29&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_30&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_31&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_32&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_33&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_34&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_35&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_36&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_37&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_38&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_39&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_40&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_41&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_42&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_43&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_44&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_45&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_46&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_47&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_48&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_49&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_50&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_51&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_52&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll1_53&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_01&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_02&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_03&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_04&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_05&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_06&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_07&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_08&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_09&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_10&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_11&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_12&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_13&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_14&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_15&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_16&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_17&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_18&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_19&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_20&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_21&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_22&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_23&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_24&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_25&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_26&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_27&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_28&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_29&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_30&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_31&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_32&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_33&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_34&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_35&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_36&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_37&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_38&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_39&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_40&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_41&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_42&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_43&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_44&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_45&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_46&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_47&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_48&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_49&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_50&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_51&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_52&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_53&amp;&amp;
-http://%ill%/fiftyeight/aec_bday/roll2_54&amp;&amp;</pre>
+                  <a href="https://gist.github.com/2718980#file_aec_bday.txt">View Source</a>
                 </div>
               </div>
             </div>
@@ -335,103 +112,7 @@ http://%ill%/fiftyeight/aec_bday/roll2_54&amp;&amp;</pre>
               </div>
               <div id="guestbook_cgi" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <pre class="prettyprint linenums">
-#!/usr/bin/perl 
-
-$FORM{&#39;node&#39;} = &quot;index&quot;;
-
-#Initialise - print content type, header and get values passed.
-@pairs = split(/&amp;/, $ENV{&#39;QUERY_STRING&#39;}); 
-foreach $pair (@pairs) { 
-	($name, $value) = split(/=/, $pair); 
-	$value =~ tr/+/ /; 
-	$value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack(&quot;C&quot;, hex($1))/eg; 
-	$FORM{$name} = $value; 
-} 
-
-print &quot;Content-type: text/html\n\n&quot;;
-
-print &quot;&lt;html&gt;&quot;;
-
-if ($FORM{&#39;add&#39;} EQ &quot;yes&quot;) {
-
-	print &quot;&lt;!-- $FORM{&#39;name&#39;} --&gt;\n&quot;;
-	print &quot;&lt;!-- $FORM{&#39;email&#39;} --&gt;\n&quot;;
-	print &quot;&lt;!-- $FORM{&#39;web&#39;} --&gt;\n&quot;;;
-	print &quot;&lt;!-- $FORM{&#39;message&#39;} --&gt;\n&quot;;
-	if (open(MESSAGES, &quot;&gt;&gt;index.txt&quot;)) {
-		print MESSAGES &quot;&lt;table width=100% cellspacing=0 cellpadding=5&gt;&quot;;
-		print MESSAGES &quot;&lt;tr height=4 bgcolor=white&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
-		print MESSAGES &quot;&lt;tr&gt;&lt;td width=10%&gt;&lt;b&gt;$FORM{&#39;name&#39;}&lt;/b&gt;&lt;br&gt;$FORM{&#39;email&#39;}&lt;br&gt;&quot;;
-		print MESSAGES &quot;&lt;a href=\&quot;$FORM{&#39;web&#39;}\&quot;&gt;$FORM{&#39;web&#39;}&lt;/a&gt;&lt;/td&gt;\n&quot;;
-		print MESSAGES &quot;&lt;td width=1 bgcolor=white&gt;&lt;/td&gt;&quot;;
-		print MESSAGES &quot;&lt;td&gt;&lt;pre&gt;$FORM{&#39;message&#39;}&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
-		print MESSAGES &quot;&lt;tr height=4 bgcolor=white&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
-		print MESSAGES &quot;&lt;/table&gt;\n&quot;;
-
-	    close(MESSAGES);
-	}
-;
-
-}
-
-
-open(DATA,&quot;index.txt&quot;);
-        @index = &lt;DATA&gt;;
-close (DATA);
-chomp(@index);
-
-print &quot;
- &lt;head&gt;
-  &lt;title&gt;FiftyEight&lt;/title&gt;
- &lt;/head&gt;
-&lt;script&gt;
-function WM_on(id){
-    document.getElementById(id).style.display = &#39;block&#39;;
-}
-function WM_off(id){
-    document.getElementById(id).style.display = &#39;none&#39;;
-}
-&lt;/script&gt;
- &lt;body bgcolor=black text=white style=\&quot;padding: 0; border: 0; indent: 0\&quot;&gt;
-  &lt;table width=100% border=0&gt;
-   &lt;tr&gt;
-    &lt;td rowspan=4&gt;&lt;/td&gt;
-    &lt;td width=600 align=center valign=middle&gt;
-     &lt;a href=\&quot;../\&quot; onmouseover=\&quot;WM_on(&#39;div1&#39;); return false\&quot; onmouseout=\&quot;WM_off(&#39;div1&#39;); return false\&quot;&gt;&lt;img
-id=\&quot;mainpic\&quot; src=\&quot;../fiftyeight.png\&quot; width=324 height=38\&quot; border=0&gt;&lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td rowspan=4&gt;&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td align=center valign=middle&gt;
-     &lt;img src=\&quot;title.png\&quot;&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td align=center valign=middle&gt;
-      &lt;form method=\&quot;GET\&quot; action=\&quot;index.cgi\&quot;&gt;
-      &lt;input type=\&quot;hidden\&quot; name=\&quot;add\&quot; value=\&quot;yes\&quot;&gt;
-      Your Name: &lt;input type=\&quot;text\&quot; name=\&quot;name\&quot; size=\&quot;20\&quot; value=\&quot;\&quot;&gt;&lt;br&gt;
-      Your Email: &lt;input type=\&quot;text\&quot; name=\&quot;email\&quot; size=\&quot;20\&quot; value=\&quot;\&quot;&gt;&lt;br&gt;
-      Your WebSite: &lt;input type=\&quot;text\&quot; name=\&quot;web\&quot; size=\&quot;20\&quot; value=\&quot;http://\&quot;&gt;&lt;br&gt;
-      Your Message:&lt;br&gt;
-      &lt;textarea rows=\&quot;10\&quot; name=\&quot;message\&quot; cols=\&quot;40\&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
-      &lt;input type=\&quot;submit\&quot; value=\&quot;Submit\&quot;&gt;
-     &lt;/form&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-
-   &lt;tr&gt;
-    &lt;td align=center valign=middle&gt;&quot;;
-
-print &quot;@index&quot;;
-
-print &quot;    &lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/body&gt;
-&lt;/html&gt;&quot;;</pre>
+                  <a href="https://gist.github.com/2718980#file_guestbook.cgi">View Source</a>
                 </div>
               </div>
             </div>
@@ -441,11 +122,7 @@ print &quot;    &lt;/td&gt;
               </div>
               <div id="guestbook_txt" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <pre class="prettyprint linenums">
-&lt;table width=100% cellspacing=0 cellpadding=5&gt;&lt;tr height=4 bgcolor=white&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=10%&gt;&lt;b&gt;Andrew Cole&lt;/b&gt;&lt;br&gt;andrew@illallangi.com&lt;br&gt;&lt;a href=&quot;http://www.illallangi.com&quot;&gt;http://www.illallangi.com&lt;/a&gt;&lt;/td&gt;
-&lt;td width=1 bgcolor=white&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Welcome to my guestboook! Please sign it.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr height=4 bgcolor=white&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;table width=100% cellspacing=0 cellpadding=5&gt;&lt;tr height=4 bgcolor=white&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=10%&gt;&lt;b&gt;Bob&lt;/b&gt;&lt;br&gt;BobIt@Blah.Com&lt;br&gt;&lt;a href=&quot;http://blah.com&quot;&gt;http://blah.com&lt;/a&gt;&lt;/td&gt;
-&lt;td width=1 bgcolor=white&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Fsck You All!&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr height=4 bgcolor=white&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</pre>
+                  <a href="https://gist.github.com/2718980#file_guestbook.txt">View Source</a>
                 </div>
               </div>
             </div>
@@ -463,8 +140,12 @@ print &quot;    &lt;/td&gt;
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/assets/jquery/js/jquery-1.7.2.min.js"></script>
-    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/google-code-prettify/js/prettify.js"></script>
+    <script src="../assets/jquery/js/jquery-1.7.2.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/google-code-prettify/js/prettify.js"></script>
+    <script src="../assets/js/gist999085.js"></script>
+    <script type="text/javascript">
+      $($.gist); // replace gist links by embedded gists
+    </script>  
   </body>
 </html>
