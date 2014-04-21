@@ -1,0 +1,48 @@
+<html>
+ <head>
+  <title>FiftyEight</title>
+ </head>
+<script>
+function WM_on(id){
+    document.getElementById(id).style.display = 'block';
+}
+function WM_off(id){
+    document.getElementById(id).style.display = 'none';
+}
+</script>
+ <body bgcolor=black text=white style="padding: 0; border: 0; indent: 0">
+  <table width=100% border=0>
+   <tr>
+    <td rowspan=4></td>
+    <td width=600 align=center valign=middle>
+     <a href="../" onmouseover="WM_on('div1'); return false" onmouseout="WM_off('div1'); return false"><img id="mainpic" src="../fiftyeight.png" width=324 height=38" border=0></a>
+    </td>
+    <td rowspan=4></td>
+   </tr>
+   <tr>
+    <td align=center valign=middle>
+     <img src="title.png">
+    </td>
+   </tr>
+   <tr>
+    <td align=center valign=middle>
+     <a href="#" onClick="window.open('jimbeam/','jimbeam','location=no,menubar=no,scrollbars'); return false;"><img src="drink1.jpg" onmouseover="WM_on('drink1'); return false" onmouseout="WM_off('drink1'); return false" border=0></a>
+     <a href="#" onClick="window.open('kirov/','kirov','location=no,menubar=no,scrollbars'); return false;"><img src="drink2.jpg" onmouseover="WM_on('drink2'); return false" onmouseout="WM_off('drink2'); return false" border=0></a>
+     <a href="#" onClick="window.open('smirnoff/','kirov','location=no,menubar=no,scrollbars'); return false;"><img src="drink3.jpg" onmouseover="WM_on('drink3'); return false" onmouseout="WM_off('drink3'); return false" border=0></a>
+     <a href="#" onClick="window.open('mercury/','mercury','location=no,menubar=no,scrollbars'); return false;"><img src="drink4.jpg" onmouseover="WM_on('drink4'); return false" onmouseout="WM_off('drink4'); return false" border=0></a>
+     <a href="#" onClick="window.open('cruiser/','cruiser','location=no,menubar=no,scrollbars'); return false;"><img src="drink5.jpg" onmouseover="WM_on('drink5'); return false" onmouseout="WM_off('drink5'); return false" border=0></a>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <div id="div1"   style="position: absolute; x: 0; y: 0; display: none; width: 600; text-align: center;"><font face="verdana" size="3">Go Back<br>to the front page</font></div>
+     <div id="drink1" style="position: absolute; x: 0; y: 0; display: none; width: 600; text-align: center;"><font face="verdana" size="3">Jim Beam</font></div>
+     <div id="drink2" style="position: absolute; x: 0; y: 0; display: none; width: 600; text-align: center;"><font face="verdana" size="3">Kirov: Triple Distilled</font></div>
+     <div id="drink3" style="position: absolute; x: 0; y: 0; display: none; width: 600; text-align: center;"><font face="verdana" size="3">Smirnoff</font></div>
+     <div id="drink4" style="position: absolute; x: 0; y: 0; display: none; width: 600; text-align: center;"><font face="verdana" size="3">Mercury Cider</font></div>
+     <div id="drink5" style="position: absolute; x: 0; y: 0; display: none; width: 600; text-align: center;"><font face="verdana" size="3">Vodka Cruiser</font></div>
+    </td>
+   </tr>
+  </table>
+ </body>
+</html>
