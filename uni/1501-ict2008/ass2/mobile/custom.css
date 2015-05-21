@@ -1,0 +1,96 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* https://flic.kr/p/pKneEA */
+body
+{
+  background: url('15586958314_eabee7f9c4_o.jpg');
+  background-position: right top;
+  background-size: 240%;
+  background-repeat: no-repeat;
+  margin-bottom: 320px;
+  overflow: hidden;
+}
+
+div.jumbotron
+{
+  background-color: transparent;
+  text-align: center;
+}
+
+div.jumbotron h1
+{
+  font-family: 'Nunito', sans-serif;
+  font-size:50px;
+}
+
+h2
+{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.parti-container
+{
+  background-color: #FFFFFF;
+  font-weight: bold;
+  border-width:5px;
+  border-color: black;
+  border-radius:15px;
+  border-style: solid;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.parti-button
+{
+  font-weight: bold;
+  border-width:5px;
+  border-color: black;
+  border-radius:15px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.parti-fa-large
+{
+  font-size: 35px;
+}
+
+.parti-seatselection
+{
+  text-align:center;
+}
+
+.parti-seat
+{
+  width: 50px;
+  height: 50px;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.parti-seatinner
+{
+  padding: 25px;
+}
+
+.img-circle{
+  padding:16px;
+}
+
+.parti-seatrow
+{
+  width: 100px;
+  height: 50px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 360px;
+}
