@@ -1,0 +1,163 @@
+/* https://flic.kr/p/poH1Ph */
+body
+{
+  background: url('15353170910_f7db6e1af2_o.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 300px;
+  overflow: hidden;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding-top: 0;
+}
+
+.navbar-brand
+{
+  font-size: 50px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.penguin
+{
+  font-family: 'Nunito', sans-serif;
+}
+
+/* http://icons.mysitemyway.com/legacy-icon/013774-lime-green-white-pearl-icon-animals-animal-penguine-sc43/ */
+.parti-green
+{
+  background: url('013774-lime-green-white-pearl-icon-animals-animal-penguine-sc43.png');
+  background-position: center bottom;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 120px;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+/* http://icons.mysitemyway.com/legacy-icon/012024-blue-white-pearl-icon-animals-animal-penguine-sc43/ */
+.parti-blue
+{
+  background: url('012024-blue-white-pearl-icon-animals-animal-penguine-sc43.png');
+  background-position: center bottom;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 120px;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.parti-button
+{
+  font-weight: bold;
+  border-width:5px;
+  border-color: black;
+  border-radius:15px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+h2
+{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+td
+{
+  font-size: 24px;
+}
+th
+{
+  font-size: 18px;
+  text-align: center;
+}
+
+/* http://icons.mysitemyway.com/legacy-icon/014774-red-white-pearl-icon-animals-animal-penguine-sc43/ */
+th.parti-red
+{
+  background: url('014774-red-white-pearl-icon-animals-animal-penguine-sc43.png');
+  background-position: center bottom;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 120px;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+span.parti-red
+{
+  color: red;
+}
+.navbar
+{
+  font-size: 20px;
+}
+
+.navbar-default .navbar-nav>li>a
+{
+  color: black;
+}
+
+.navbar-default {
+  background-image: -webkit-linear-gradient(top, #1D87B5 0%, #73B7D1 100%);
+  background-image: -o-linear-gradient(top, #1D87B5 0%, #73B7D1 100%);
+  background-image: linear-gradient(to bottom, #1D87B5 0%, #73B7D1 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1D87B5', endColorstr='#ff73B7D1', GradientType=0);
+}
+
+.navbar-default .navbar-brand
+{
+  color: black;
+}
+
+.input-group[class*="col-"] {
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.parti-booking
+{
+  background-color: #FFFFFF;
+  font-weight: bold;
+  border-width:5px;
+  border-color: black;
+  border-radius:15px;
+  border-style: solid;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.parti-photo
+{
+  text-align: right;
+}
+
+.parti-map
+{
+  /* http://www.gcmap.com/mapui?P=BWT-GEE-HLS%2C+color%3Anavy%2C+BWT-HBA%2C++BWT-KNS%2C++BWT-DPO-LST%2C+BWT-SIO%2C++BWT-SRN%2C++BWT-FLS%2C+BWT-MBW&PM=b%3Adisc7%2B%25N&MS=bm&DU=mi */
+  background: url('map.gif');
+  background-repeat: no-repeat;
+  background-color: #00003A;
+  height: 540px;
+  text-align: right;
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  font-weight: bold;
+  color: white;
+}

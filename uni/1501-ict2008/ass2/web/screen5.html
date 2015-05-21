@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penguin Air - Passenger Details</title>
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="custom.css" />
+  <link href='http://fonts.googleapis.com/css?family=Nunito:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="screen1.html"><i class="fa fa-plane"></i> Penguin Air</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li><a href=""><i class="fa fa-globe"></i> Where we fly</a>
+          </li>
+          <li><a href=""><i class="fa fa-user"></i> Who we are</a>
+          </li>
+          <li><a href=""><i class="fa fa-phone"></i> Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 parti-booking">
+        <h1><i class="fa fa-user"></i> Passenger Details</h1>
+        <p>Please enter your passenger details exactly as they appear on your ID.</p>
+        <form class="form-horizontal">
+          <div class="form-group  has-success has-feedback">
+            <label for="inputPassword3" class="col-sm-2 control-label">First/Given Name:</label>
+            <div class="col-sm-10 input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" id="inputPassword3" placeholder="First/Given Name" value="Andrew">
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="form-group  has-success has-feedback">
+            <label for="inputPassword3" class="col-sm-2 control-label">Last/Family Name:</label>
+            <div class="col-sm-10 input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" id="inputPassword3" placeholder="Last/Family Name" value="Cole">
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Email:</label>
+            <div class="col-sm-10 input-group">
+              <span class="input-group-addon">@</span>
+              <input type="text" class="form-control" id="inputPassword3" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Phone:</label>
+            <div class="col-sm-10 input-group">
+              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+              <input type="text" class="form-control" id="inputPassword3" placeholder="Phone">
+            </div>
+          </div>
+        </form>
+        <div style="text-align: right">
+          <button type='submit' class='btn btn-lg btn-error parti-button'>
+            <h2><i class="fa fa-remove"></i> Cancel</h2>
+          </button>
+          <button type='submit' class='btn btn-lg btn-success parti-button'  disabled="disabled">
+            <h2>Continue <i class="fa fa-arrow-right"></i></h2>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
